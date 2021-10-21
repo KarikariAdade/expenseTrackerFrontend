@@ -10,7 +10,7 @@
           <div class="card-body">
             <p>{{ expense.amount | currency: 'GHC'}}</p>
             <p>{{ expense.description}}</p>
-            <button class="btn btn-primary">Details</button>
+            <a routerLink="/expenses/edit/{{ expense.id }}" class="btn btn-primary">Edit Button</a>
           </div>
         </div>
       </div>

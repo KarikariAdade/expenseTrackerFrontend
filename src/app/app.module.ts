@@ -12,15 +12,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { ListExpenseComponent } from './components/list-expense/list-expense.component';
-import { AddExpenseComponent } from './components/add-expense/add-expense.component';
+import { ListExpenseComponent } from './components/expenses/list-expense/list-expense.component';
+import { AddExpenseComponent } from './components/expenses/add-expense/add-expense.component';
 import {RouterModule, Routes} from "@angular/router";
+import { ViewExpenseComponent } from './components/expenses/view-expense/view-expense.component';
+import { EditExpenseComponent } from './components/expenses/edit-expense/edit-expense.component';
 
 // Define route array
 
 const routers: Routes = [
   {path: 'expenses', component: ListExpenseComponent},
   {path: 'expenses/add', component: AddExpenseComponent},
+  {path: 'expenses/detail/:id', component: ViewExpenseComponent}, // This is how we pass route parameter in angular
+  {path: 'expenses/edit/:id', component: AddExpenseComponent},
   {path: '', redirectTo: '/expenses', pathMatch: 'full'},
 
 ];
@@ -29,7 +33,9 @@ const routers: Routes = [
   declarations: [
     AppComponent,
     ListExpenseComponent,
-    AddExpenseComponent
+    AddExpenseComponent,
+    ViewExpenseComponent,
+    EditExpenseComponent,
   ],
   imports: [
     BrowserModule,
