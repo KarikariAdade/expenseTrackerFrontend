@@ -6,11 +6,11 @@
 
   <div class="col-md-6 form-group mt-4">
     <label>Expense Name</label>
-    <input type="text" class="form-control" name="expense" [(ngModel)]="expense.expense" placeholder="Enter Expense Name">
+    <input type="text" class="form-control" name="expense" [(ngModel)]="expense.expense" placeholder="Enter Expense Name" value="{{ expense.expense}}">
   </div>
   <div class="col-md-6 form-group mt-4">
     <label>Expense Amount</label>
-    <input type="number" name="amount" class="form-control" [(ngModel)]="expense.amount" placeholder="Enter Expense Amount">
+    <input type="number" name="amount" class="form-control" [(ngModel)]="expense.amount" placeholder="Enter Expense Amount" value="{{ expense.amount }}">
   </div>
   <div class="col-md-6 form-group mt-4">
     <label>Expense Description</label>

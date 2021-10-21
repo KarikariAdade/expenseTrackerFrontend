@@ -22,7 +22,7 @@ export class AddExpenseComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const isIdPresent = this._activatedRoute.snapshot.paramMap.has('id')
+    const isIdPresent = this._activatedRoute.snapshot.paramMap.get('id')
     if (isIdPresent){
       // @ts-ignore
       const id = +this._activatedRoute.snapshot.paramMap.get('id');
@@ -41,6 +41,12 @@ export class AddExpenseComponent implements OnInit {
       }
     )
   }
+
+  // getExpense(){
+  //   this._expenseService.getExpense(this.expense).subscribe(
+  //     data => this.expense = data
+  //   )
+  // }
 
 
   // This method saves the expense to the database

@@ -35,9 +35,14 @@ export class ExpenseService {
     return this._HttpClient.post<Expense>(this.appendUrl('/post'), expense);
   }
 
-  getExpense(id: number): Observable<Expense>{
-    return this._HttpClient.get<Expense>(this.appendUrl('/get/${id}')).pipe(
+
+  getExpense(id: number | null): Observable<Expense>{
+    return this._HttpClient.get<Expense>(this.appendUrl('/${id}')).pipe(
       map(response => response)
     )
+  }
+
+  deleteExpense(id: number): Observable<any>{
+    return this._HttpClient.delete(this.appendUrl('/${id}'), {responseType: 'text'})
   }
 }
