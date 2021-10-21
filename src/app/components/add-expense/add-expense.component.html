@@ -1,0 +1,23 @@
+<form (ngSubmit)="saveExpense()" class="row container">
+  <!-- The ngModel is an instance of the expense class. ie, the column of the table that this is for
+       This is the format model.fieldname in the db
+
+  -->
+
+  <div class="col-md-6 form-group mt-4">
+    <label>Expense Name</label>
+    <input type="text" class="form-control" name="expense" [(ngModel)]="expense.expense" placeholder="Enter Expense Name">
+  </div>
+  <div class="col-md-6 form-group mt-4">
+    <label>Expense Amount</label>
+    <input type="number" name="amount" class="form-control" [(ngModel)]="expense.amount" placeholder="Enter Expense Amount">
+  </div>
+  <div class="col-md-6 form-group mt-4">
+    <label>Expense Description</label>
+    <textarea  name="description" [(ngModel)]="expense.description" placeholder="Enter Expense Description" class="form-control">
+       </textarea>
+  </div>
+  <div class="col-md-12 mt-4 text-center">
+    <button type="submit" class="btn btn-primary">Submit Expense</button>
+  </div>
+  </form>
