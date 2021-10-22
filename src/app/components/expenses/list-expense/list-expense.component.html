@@ -1,8 +1,11 @@
 <div>
   <div class="container">
-    <div class="form-group">
-      <label>Filter Expense</label>
-      <input type="text" class="form-control" [(ngModel)]="filters.keyword" name="keyword" (input)="listExpenses()">
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label>Filter Expense</label>
+        <input type="text" class="form-control" [(ngModel)]="filters.keyword" name="keyword" (input)="listExpenses()">
+      </div>
+
     </div>
     <br>
     <a routerLink="/expenses/add" class="btn btn-primary">Add Expense</a>

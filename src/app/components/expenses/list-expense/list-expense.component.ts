@@ -17,7 +17,8 @@ export class ListExpenseComponent implements OnInit {
   // Create object for filters
 
   filters = {
-    keyword: ''
+    keyword: '',
+    sortBy: 'Name'
   }
 
   // Inject Expense service
@@ -58,6 +59,8 @@ export class ListExpenseComponent implements OnInit {
 
     // The filter method filters the expenses array
     return expenses.filter((e) => {
+
+      // e.expense here kinda filters the expense column
       return e.expense?.toLowerCase().includes(this.filters.keyword.toLowerCase());
     })
   }
