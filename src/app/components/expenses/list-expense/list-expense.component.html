@@ -1,5 +1,10 @@
 <div>
   <div class="container">
+    <div class="form-group">
+      <label>Filter Expense</label>
+      <input type="text" class="form-control" [(ngModel)]="filters.keyword" name="keyword" (input)="listExpenses()">
+    </div>
+    <br>
     <a routerLink="/expenses/add" class="btn btn-primary">Add Expense</a>
     <div class="row">
       <div class="col-md-4 mt-4" *ngFor="let expense of expenses">
