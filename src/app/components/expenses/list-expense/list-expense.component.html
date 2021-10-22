@@ -10,7 +10,8 @@
           <div class="card-body">
             <p>{{ expense.amount | currency: 'GHC'}}</p>
             <p>{{ expense.description}}</p>
-            <a routerLink="/expenses/edit/{{ expense.id }}" class="btn btn-primary">Edit Button</a>
+            <a routerLink="/expenses/edit/{{ expense.id }}" class="btn btn-primary btn-sm" style="margin-right: 10px !important;">Edit Button</a>
+            <button class="btn btn-danger btn-sm" *ngIf="expense.id" (click)="deleteExpense(expense.id)">Delete Expense</button>
           </div>
         </div>
       </div>

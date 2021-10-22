@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Expense} from "../models/expense";
 import {map} from "rxjs/operators"
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ExpenseService {
     return this.getUrl+url;
   }
 
-  constructor(private _HttpClient: HttpClient) { }
+  constructor(private _HttpClient: HttpClient, private router: Router) { }
 
   // Create expense observable
   // The observable kinda get the data, you then subscribe to the observable to get the needed api data
@@ -43,6 +44,8 @@ export class ExpenseService {
   }
 
   deleteExpense(id: number): Observable<any>{
-    return this._HttpClient.delete(this.appendUrl('/${id}'), {responseType: 'text'})
+    return this._HttpClient.delete(this.appendUrl('/delete/'+id), {responseType: 'text'})
+
   }
+
 }
